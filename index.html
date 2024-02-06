@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata and link to the stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main calculator container -->
+    <div class="calculator">
+        <!-- Display area for calculation results -->
+        <div class="result-container">
+            <div class="result" id="result">0</div>
+        </div>
+        <!-- Container for calculator buttons -->
+        <div class="calculator-keys">
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" class="operator" value="/">÷</button>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" class="operator" value="*">×</button>
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" class="operator" value="-">-</button>
+            <button type="button" value="0">0</button>
+            <button type="button" class="decimal" value=".">.</button>
+            <button type="button" class="all-clear" value="AC">AC</button>
+            <button type="button" class="operator" value="+">+</button>
+            <button type="button" class="delete" value="DEL">DEL</button>
+            <button type="button" class="equal-sign span-2" value="=">=</button>
+            <button id="toggleHistory">Show History</button>
+        </div>
+        <!-- History display area, hidden by default -->
+        <div id="history" class="history" style="display: none;"></div>
+    </div>
+    <!-- JavaScript for functionality -->
+    <script src="script.js"></script>
+</body>
+</html>

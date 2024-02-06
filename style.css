@@ -1,0 +1,150 @@
+/* Basic styling for body and calculator container */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.calculator {
+    /* Styling for the calculator's appearance */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.result-container {
+    /* Styling for the result display area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.result {
+    /* Styling for the text display of results, including fade-in effect */
+    background-color: #e0e0e0;
+    border: none;
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+    font-size: 28px;
+    display: flex; /* Use flexbox to center */
+    justify-content: flex-end; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+/* Show the result with a fade-in effect */
+.result.show {
+    opacity: 1;
+}
+
+.calculator-keys {
+    /* Grid layout for the buttons */
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+button, #toggleHistory {
+    /* styling for buttons */
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 15px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+/* Styling variations for different types of buttons (operator, equal-sign, delete) */
+button.operator {
+    /* Specific styling for operator buttons */
+    background-color: #ffaf5e;
+}
+
+/* Equal sign button styles */
+button.equal-sign {
+    background-color: #6bc24e;
+    grid-column: span 2;
+}
+
+button:active {
+    /* Styling for interactive state of active */
+    transform: scale(0.98);
+    animation: buttonClick 0.1s linear;
+}
+
+@keyframes buttonClick {
+    0% {
+        transform: scale(0.98);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button:hover {
+    background-color: #e0e0e063;
+    transform: scale(0.95);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button.delete {
+    /* Styling for the delete button */
+    background-color: #ff5b5b;
+    color: white;
+}
+
+/* Delete button on hover and active states */
+button.delete:hover {
+    background-color: #e74c3c;
+}
+
+button.delete:active {
+    background-color: #c0392b;
+}
+
+/* Show History button styles */
+#toggleHistory {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+}
+
+/* Show History button active (pressed) style */
+#toggleHistory:active {
+    background-color: #2e86de;
+    animation: buttonClick 0.1s linear;
+}
+
+/* Show History button inactive (not pressed) style */
+#toggleHistory:not(:active) {
+    background-color: #2e86de;
+}
+
+/* Styling for the history display */
+.history {
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: left;
+}
